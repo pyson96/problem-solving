@@ -3,16 +3,16 @@ class Solution(object):
 
     def longestPalindrome(self, s):
         self.originStr = s
-        even_str = ""
-        odd_str = ""
+        evenStr = ""
+        oddStr = ""
         answer = ""
         for i, ch in enumerate(s):
-            even_str = self.expandPairs(i, i+1,"")
-            odd_str = self.expandPairs(i-1,i+1,ch)
-            if len(even_str) > len(answer) :
-                answer = even_str
-            if len(odd_str) > len(answer): 
-                answer = odd_str 
+            evenStr = self.expandPairs(i, i+1,"")
+            oddStr = self.expandPairs(i-1,i+1,ch)
+            if len(evenStr) > len(answer) :
+                answer = evenStr
+            if len(oddStr) > len(answer): 
+                answer = oddStr 
         return answer
         
     def expandPairs(self, l, r, s):
