@@ -13,6 +13,8 @@ class Solution:
             while i < len(self.s):
                 i = self.visitNextElement(i)
                 i = i + stride * 2       
+                if stride == 0 :
+                    break
             stride -= 1
         return self.answer
     def visitNextElement(self,idx):
